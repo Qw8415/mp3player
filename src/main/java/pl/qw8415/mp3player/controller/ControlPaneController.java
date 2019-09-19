@@ -23,11 +23,6 @@ public class ControlPaneController {
     @FXML
     private Slider progressSlider;
 
-    public void initialize() {
-        configureButtons();
-        configureSliders();
-    }
-
     public Button getPreviousButton() {
         return previousButton;
     }
@@ -47,26 +42,4 @@ public class ControlPaneController {
     public Slider getProgressSlider() {
         return progressSlider;
     }
-
-    private void configureSliders() {
-        volumeSlider.valueProperty().addListener((observableValue, oldValue, newValue) ->
-                System.out.println("Zmiana głośności " + newValue.intValue())
-        );
-        progressSlider.valueProperty().addListener(x ->
-                System.out.println("Przesunięcie piosnki")
-        );
-    }
-
-    private void configureButtons() {
-        previousButton.setOnAction(event -> System.out.println("Previous track"));
-        nextButton.setOnAction(event -> System.out.println("Next track"));
-        playButton.setOnAction(event -> {
-            if (playButton.isSelected()) {
-                System.out.println("Play");
-            } else {
-                System.out.println("Stop");
-            }
-        });
-    }
-
 }

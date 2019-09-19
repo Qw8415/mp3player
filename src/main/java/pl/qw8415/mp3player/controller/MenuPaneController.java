@@ -32,8 +32,4 @@ public class MenuPaneController {
     public MenuItem getAboutMenuItem() {
         return aboutMenuItem;
     }
-
-    public void initialize() {
-        System.out.println("Created menuController");
-    }
 }

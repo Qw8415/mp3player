@@ -27,38 +27,6 @@ public class ContentPaneController {
 
     public void initialize() {
         configureTableColumns();
-        createTestData();
-        System.out.println("Created ContentController");
-    }
-
-    private void createTestData() {
-        ObservableList<Mp3Song> items = contentTable.getItems();
-        Mp3Song testSong = createMp3SongFromPath("Studio Accantus - Nadszedł czas.mp3");
-        items.add(testSong);
-    }
-
-    private Mp3Song createMp3SongFromPath(String filePath) {
-        File file = new File(filePath);
-        System.out.println(file.getAbsolutePath());
-
-        MP3File mp3File = null;
-        try {
-            mp3File = new MP3File(file);
-
-            String absolutePath = file.getAbsolutePath();
-            String title = mp3File.getID3v2Tag().getSongTitle();
-            String author = mp3File.getID3v2Tag().getLeadArtist();
-            String album = mp3File.getID3v2Tag().getAlbumTitle();
-            return new Mp3Song(title, author, album, absolutePath);
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-            return null;
-        } catch (TagException e) {
-            System.err.println(e.getMessage());
-
-            return null;
-        }
-
     }
 
     private void configureTableColumns() {
@@ -75,7 +43,5 @@ public class ContentPaneController {
         contentTable.getColumns().add(authorColumn);
         contentTable.getColumns().add(albumColumn);
     }
-
-
 }
 
