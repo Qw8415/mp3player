@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <javafx.version>11.0.1</javafx.version>
+        <javafx.version>17.0.10</javafx.version>
         <jid3lib.version>0.5.4</jid3lib.version>
     </properties>
 
